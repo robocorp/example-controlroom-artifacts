@@ -17,6 +17,9 @@ local directory.
 Server needs to know Control Room workspace ID and the API key for accessing Process API. In this implementation those are
 provided as environment variables `CONTROL_ROOM_WORKSPACE_ID` and `CONTROL_ROOM_WORKSPACE_API_KEY`.
 
+Server is using libraries `RPA.Robocorp.Process` and `RPA.HTTP` from `rpaframework` package to access process details and 
+handle the download of the artifact.
+
 ## Description of the example Robot
 
 TBD
