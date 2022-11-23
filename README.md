@@ -14,6 +14,9 @@ Implemented with Python Flask package. The server then reads process details and
 when event indicating process complete has been received. Server downloads all ".png" named files into
 local directory.
 
+Server needs to know Control Room workspace ID and the API key for accessing Process API. In this implementation those are
+provided as environment variables `CONTROL_ROOM_WORKSPACE_ID` and `CONTROL_ROOM_WORKSPACE_API_KEY`.
+
 ## Description of the example Robot
 
 TBD
