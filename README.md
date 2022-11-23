@@ -1,11 +1,23 @@
-# Template: Standard Robot Framework
+# How to access Control Room artifacts
 
-This is the simplest template to start from.
+For E2E purposes this repository contains example Robot which take screenshots of web sites.
+For E2E purposes this repository contains server implementation which will be accessing webhook events.
 
-- Get started from a simple task template in `tasks.robot`.
-  - Uses [Robot Framework](https://robocorp.com/docs/languages-and-frameworks/robot-framework/basics) syntax.
-- You can configure your robot `robot.yaml`.
-- You can configure dependencies in `conda.yaml`.
+## Webhook approach
+
+1. Activate webhook in a Control Room API section. Events to follow would be "Process run" and "Step run".
+2. The local server is exposed to the internet using Ngrok. The Ngrok URL needs to be placed into Control Room as a webhook URL.
+
+## Description of the server which is receiving webhook events
+
+Implemented with Python Flask package. The server then reads process details and accesses process artifacts
+are event indicating process complete has been received. Server downloads all ".png" named files into
+local directory.
+
+## Description of the example Robot
+
+TBD
+
 
 ## Learning materials
 
