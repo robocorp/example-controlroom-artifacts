@@ -11,7 +11,7 @@ For E2E purposes this repository contains server implementation which will be ac
 ## Description of the server which is receiving webhook events
 
 Implemented with Python Flask package. The server then reads process details and accesses process artifacts
-are event indicating process complete has been received. Server downloads all ".png" named files into
+when event indicating process complete has been received. Server downloads all ".png" named files into
 local directory.
 
 ## Description of the example Robot
