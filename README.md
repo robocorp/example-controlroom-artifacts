@@ -20,6 +20,8 @@ provided as environment variables `CONTROL_ROOM_WORKSPACE_ID` and `CONTROL_ROOM_
 Server is using libraries `RPA.Robocorp.Process` and `RPA.HTTP` from `rpaframework` package to access process details and 
 handle the download of the artifact.
 
+To get artifacts related to a specific process id the environment variable `PROCESS_ID_FILTER` can be set.
+
 ## Description of the example Robot
 
 TBD

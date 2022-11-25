@@ -6,6 +6,7 @@ from RPA.Robocorp.Process import Process
 
 workspace_id = os.getenv("CONTROL_ROOM_WORKSPACE_ID")
 workspace_api_key = os.getenv("CONTROL_ROOM_WORKSPACE_API_KEY")
+process_id_filter = os.getenv("PROCESS_ID_FILTER", None)
 
 if not workspace_id or not workspace_api_key:
     raise AttributeError(
@@ -22,8 +23,11 @@ CR = Process(
 @flask_server.route("/", methods=["POST"])
 def control_room_artifact_downloader():
     data = request.json
+    process_id = data["payload"]["processId"]
+    if process_id_filter and process_id_filter != process_id:
+        print(f"Skipping events for process: {process_id}", flush=True)
+        return data
     if data["event"] == "robot_run_event" and data["action"] == "END":
-        process_id = data["payload"]["processId"]
         process_run_id = data["payload"]["processRunId"]
         robot_run_id = data["payload"]["robotRunId"]
         artifacts = CR.list_run_artifacts(
